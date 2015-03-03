@@ -1,6 +1,5 @@
-:: change with your cordova devs global path 
-:: 	not used if it's where start.bat is :: 
-::cd C:\www\cordova\uicompo\
+REM start Cordova dev environment
+::
 :: change with your < java , apache ant , android sdk > install paths 
 :: 		set java sdk path if needed :: SET PATH=%PATH%;C:\progra~1\Java\jdk1.6.0_45\bin 
 SET PATH=%PATH%;C:\progra~1\Java\jre6\bin;C:\Progra~1\wamp\bin\apache\ant\bin;C:\progra~1\Android\android-sdk\tools;C:\progra~1\Android\android-sdk\platform-tools
