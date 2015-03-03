@@ -1,0 +1,15 @@
+save/*
+tmp/*
+/haxeCordova/done/cordosample/hooks/*
+/haxeCordova/done/cordosample/platforms/*
+/haxeCordova/done/cordosample/plugins/*
+
+/haxeCordova/done/norma/hooks/*
+/haxeCordova/done/norma/platforms/*
+/haxeCordova/done/norma/plugins/*
+
+haxeCordova/todo/template/projet/platforms/*
+
+.gitattributes
+
+
