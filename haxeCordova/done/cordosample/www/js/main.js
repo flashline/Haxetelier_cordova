@@ -175,8 +175,9 @@ var SampleContact = function(cb) {
 SampleContact.__name__ = true;
 SampleContact.prototype = {
 	findContact: function(e) {
-		var v = (js.Boot.__cast(apix.common.util.StringExtender.get("#contactCtnr .search") , HTMLInputElement)).value;
+		apix.common.util.StringExtender.get("#contactCtnr .search").removeEventListener("input",$bind(this,this.findContact));
 		apix.common.util.StringExtender.get("#contactCtnr .contactDisplay").innerHTML = "";
+		var v = (js.Boot.__cast(apix.common.util.StringExtender.get("#contactCtnr .search") , HTMLInputElement)).value;
 		var options = new ContactFindOptions();
 		options.multiple = true;
 		options.filter = v;
@@ -191,7 +192,7 @@ SampleContact.prototype = {
 			var oneContact = contacts[_g];
 			++_g;
 			str = apix.common.util.StringExtender.unspaced(oneContact.displayName);
-			if(str != "") {
+			if(str.length > 1) {
 				if(oneContact.phoneNumbers != null) {
 					if(oneContact.phoneNumbers.length > 0) {
 						n++;
@@ -203,7 +204,7 @@ SampleContact.prototype = {
 							++_g1;
 							var t = apix.common.util.StringExtender.unspaced(onePhone.type);
 							var v = apix.common.util.StringExtender.unspaced(onePhone.value);
-							if(t + v != "") {
+							if((t + v).length > 1) {
 								j++;
 								var itemEl = this.createNewEmptyItem("" + n + "-" + j);
 								apix.common.util.StringExtender.get("#" + itemEl.id + " .name").innerHTML = str;
@@ -215,8 +216,10 @@ SampleContact.prototype = {
 				}
 			}
 		}
+		apix.common.util.StringExtender.get("#contactCtnr .search").addEventListener("input",$bind(this,this.findContact));
 	}
 	,onContactError: function(contactError) {
+		apix.common.util.StringExtender.get("#contactCtnr .search").addEventListener("input",$bind(this,this.findContact));
 		js.Lib.alert(" Erreur durant la lecture du carnet d'adresse !!! ");
 	}
 	,createNewEmptyItem: function(v) {

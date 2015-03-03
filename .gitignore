@@ -9,7 +9,9 @@ tmp/*
 /haxeCordova/done/norma/plugins/*
 
 haxeCordova/todo/template/projet/platforms/*
-
+.gitignore
 .gitattributes
-
-
+a.bat
+c.bat
+p.bat
+s.bat
