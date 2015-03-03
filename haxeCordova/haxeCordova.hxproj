@@ -13,7 +13,7 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="C:\www\Haxetelier Cordova\classes\" />
+    <class path="C:\www\Haxetelier_cordova\classes\" />
     <class path="C:\Program Files\haxe\haxe31\std\" />
     <class path="C:\www\__HAXE\classes\Apix\" />
   </classpaths>

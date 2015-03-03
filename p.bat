@@ -3,11 +3,3 @@ git status
 pause
 git push -u hxc master
 git status
-
-
-
-
-
-
-
-
