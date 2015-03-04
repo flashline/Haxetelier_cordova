@@ -65,8 +65,7 @@ class StringExtender  {
 	}
 	public inline static function unspaced (v:String):String {
 		return  (v==null)?"":StringTools.rtrim(StringTools.ltrim(v));
-	}
-	
+	}	
 	public static function replaceOnce (str:String,from:String,to:String ) :String {
 		var p = str.indexOf(from); var v = str;
 		if (p != -1) {
