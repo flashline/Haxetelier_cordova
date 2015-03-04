@@ -1,5 +1,6 @@
 save/*
 tmp/*
+doc/jm/*
 /haxeCordova/done/cordosample/hooks/*
 /haxeCordova/done/cordosample/platforms/*
 /haxeCordova/done/cordosample/plugins/*
