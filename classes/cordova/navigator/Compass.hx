@@ -11,22 +11,16 @@ extern class Compass {
 	
 }
 
-typedef CompassHeading = {
-	
+typedef CompassHeading = {	
 	var magneticHeading:Float;
 	var trueHeading:Float;
 	var headingAccuracy:Float;
-	var timestamp:Int;
-	
+	var timestamp:Int;	
 }
-
-class CompassError {
-	
-	static var COMPASS_INTERNAL_ERR:Dynamic;
-	static var COMPASS_NOT_SUPPORTED:Dynamic;
-	
-	public var code:Dynamic;
-	
+extern class CompassError {	
+	static inline var COMPASS_INTERNAL_ERR:Int=0;
+	static inline var COMPASS_NOT_SUPPORTED:Int=20;
+	public var code:Int;
 }
 
 typedef CompassOptions = {	

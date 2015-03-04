@@ -13,14 +13,12 @@ typedef Position = {
 	var coords:Coordinates;
 	var timestamp:Date;	
 }
-
-typedef PositionError = {	
-	var code:Dynamic;
+extern class PositionError {	
+	var code:Int;
 	var message:String;	
-	var PERMISSION_DENIED:Dynamic;
-	var POSITION_UNAVAILABLE:Dynamic;
-	var TIMEOUT:Dynamic;
-	
+	static inline var PERMISSION_DENIED:Int=1;
+	static inline var POSITION_UNAVAILABLE:Int=2;
+	static inline var TIMEOUT:Int = 3;
 }
 typedef Coordinates = {	
 	var latitude: Float;

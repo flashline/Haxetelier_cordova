@@ -1,7 +1,8 @@
 package cordova.navigator;
-
-
-@:native ("navigator.device.capture")
+//
+// works with org.apache.cordova.media-capture
+//
+@:native("navigator.device.capture")
 extern class Capture {
 	
 	static var supportedAudioModes:Array <ConfigurationData>;
@@ -13,68 +14,51 @@ extern class Capture {
 	static function captureVideo (success:Array <MediaFile> -> Void, error:CaptureError -> Void, ?options:CaptureVideoOptions):Void;
 	
 }
-
-typedef ConfigurationData {
-	
-	var type:String;
-	var height:Int;
-	var width:Int;
-	
+extern class CaptureError  {	
+	static inline var CAPTURE_INTERNAL_ERR:Int=1; 	
+	static inline var CAPTURE_APPLICATION_BUSY:Int=2;
+	static inline var CAPTURE_INVALID_ARGUMENT:Int=3;
+	static inline var CAPTURE_NO_MEDIA_FILES:Int=4;	
+	static inline var CAPTURE_NOT_SUPPORTED:Int=20;
+	//
+	var code:Int;	
 }
-
-extern class MediaFile {
-	
+extern class MediaFile {	
 	var name:String;
 	var fullPath:String;
 	var type:String;
 	var lastModifiedDate:Date;
 	var size:Int;
-	
-	function getFormatData(success:MediaFileData -> Void, error:Void -> Void):Void;
-	
+	//
+	function getFormatData(success:MediaFileData -> Void, error:Void -> Void) : Void;	
 }
 
-typedef MediaFileData {
-	
+typedef ConfigurationData  = {	
+	var type:String;
+	var height:Int;
+	var width:Int;	
+}
+
+
+typedef MediaFileData  = {	
 	var codecs:String;
 	var bitrate:Float;
 	var height:Int;
 	var width:Int;
-	var duration:Int;
-	
+	var duration:Int;	
 }
-
-typedef CaptureError {
-	
-	static var CAPTURE_INTERNAL_ERR:Dynamic;
-	static var CAPTURE_APPLICATION_BUSY:Dynamic;
-	static var CAPTURE_INVALID_ARGUMENT:Dynamic;
-	static var CAPTURE_NO_MEDIA_FILES:Dynamic;
-	static var CAPTURE_NOT_SUPPORTED:Dynamic;
-	
-	var code:CaptureErrorCode;
-	
-}
-
-typedef CaptureAudioOptions {
-	
+typedef CaptureAudioOptions  = {	
 	@:optional var limit:Int;
 	@:optional var duration:Float;
-	@:optional var mode:ConfigurationData;
-	
+	@:optional var mode:ConfigurationData;	
 }
-
-typedef CaptureImageOptions {
-	
+typedef CaptureImageOptions  = {	
 	@:optional var limit:Int;
-	@:optional var mode:ConfigurationData;
-	
+	@:optional var mode:ConfigurationData;	
 }
 
-typedef CaptureVideoOptions {
-	
+typedef CaptureVideoOptions  = {	
 	@:optional var limit:Int;
 	@:optional var duration:Int;
-	@:optional var mode:ConfigurationData;
-	
+	@:optional var mode:ConfigurationData;	
 }

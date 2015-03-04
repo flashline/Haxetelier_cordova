@@ -916,7 +916,7 @@ apix.common.util.StringExtender.alert = function(s) {
 };
 apix.common.util.StringExtender.trace = function(s,v) {
 	if(v != null) s += "=" + Std.string(v.toString());
-	haxe.Log.trace(s,{ fileName : "StringExtender.hx", lineNumber : 82, className : "apix.common.util.StringExtender", methodName : "trace"});
+	haxe.Log.trace(s,{ fileName : "StringExtender.hx", lineNumber : 81, className : "apix.common.util.StringExtender", methodName : "trace"});
 };
 var cordova = {};
 cordova.CordovaEvent = function() { };
