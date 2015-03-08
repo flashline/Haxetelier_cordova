@@ -28,9 +28,10 @@ class Device {
 	}
 	//
 	public static var orientation(get, null):Int ;
-	static function get_orientation () :Int {
-		return untyped __js__ ("window.orientation") ;
-	}	
+	static function get_orientation () :Int return untyped __js__ ("window.orientation") ;
+	//
+	public static var portrait(get, null):Bool ;
+	static function get_portrait () :Bool return orientationMode==OrientationMode.PORTRAIT;
 }
 //
 @:enum

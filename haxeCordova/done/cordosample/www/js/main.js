@@ -479,11 +479,11 @@ var SampleDevice = function(cb) {
 	this.callback = cb;
 	var str = "";
 	str += "Infos sur l'appareil :" + "<br/>";
-	str += "Mod&egrave;le : " + window.device.model + "<br/>";
-	str += "Cordova version : " + window.device.cordova + "<br/>";
-	str += "Plateforme : " + window.device.platform + "<br/>";
-	str += "Version syst&egrave;me : " + window.device.version + "<br/>";
-	str += "Id. Unique Universel : <br/>" + window.device.uuid + "<br/>";
+	str += "Mod&egrave;le : " + cordova.Device.get_model() + "<br/>";
+	str += "Cordova version : " + cordova.Device.get_cordova() + "<br/>";
+	str += "Plateforme : " + cordova.Device.get_platform() + "<br/>";
+	str += "Version syst&egrave;me : " + cordova.Device.get_version() + "<br/>";
+	str += "Id. Unique Universel : <br/>" + cordova.Device.get_uuid() + "<br/>";
 	haxe.Log.trace(str,{ fileName : "SampleDevice.hx", lineNumber : 33, className : "SampleDevice", methodName : "new"});
 	if(this.callback != null) this.callback();
 };
@@ -572,7 +572,7 @@ SampleGeolocation.prototype = {
 	}
 	,onGeolocError: function(error) {
 		var str = "Géolocation error:<br/>";
-		str += "code: " + Std.string(error.code) + " ";
+		str += "code: " + error.code + " ";
 		str += "message: " + error.message + " ";
 		js.Lib.alert(str);
 	}
@@ -599,31 +599,31 @@ SampleMotion.prototype = {
 	}
 	,moveMario: function(x,y,z) {
 		var v;
-		if(!(Math.abs(window.orientation) == 90)) v = x; else v = y;
-		if(!(Math.abs(window.orientation) == 90) || window.orientation == -90) this.left = apix.common.util.StringExtender.get("#marioCtnr .left"); else this.left = apix.common.util.StringExtender.get("#marioCtnr .right");
-		if(!(Math.abs(window.orientation) == 90) || window.orientation == -90) this.right = apix.common.util.StringExtender.get("#marioCtnr .right"); else this.right = apix.common.util.StringExtender.get("#marioCtnr .left");
+		if(cordova.Device.get_portrait()) v = x; else v = y;
+		if(cordova.Device.get_portrait() || cordova.Device.get_orientation() == -90) this.left = apix.common.util.StringExtender.get("#marioCtnr .left"); else this.left = apix.common.util.StringExtender.get("#marioCtnr .right");
+		if(cordova.Device.get_portrait() || cordova.Device.get_orientation() == -90) this.right = apix.common.util.StringExtender.get("#marioCtnr .right"); else this.right = apix.common.util.StringExtender.get("#marioCtnr .left");
 		if(Math.abs(v) < 4) {
 			this.left.style.display = "none";
 			this.right.style.display = "none";
 			this.stand.style.display = "block";
-			this.locateMario(v,this.stand,!(Math.abs(window.orientation) == 90));
+			this.locateMario(v,this.stand,cordova.Device.get_portrait());
 		} else {
 			this.stand.style.display = "none";
 			if(v > 0) {
 				this.left.style.display = "block";
 				this.right.style.display = "none";
-				this.locateMario(v,this.left,!(Math.abs(window.orientation) == 90));
+				this.locateMario(v,this.left,cordova.Device.get_portrait());
 			} else {
 				this.left.style.display = "none";
 				this.right.style.display = "block";
-				this.locateMario(v,this.right,!(Math.abs(window.orientation) == 90));
+				this.locateMario(v,this.right,cordova.Device.get_portrait());
 			}
 		}
 	}
 	,locateMario: function(x,img,portrait) {
 		if(portrait == null) portrait = true;
 		var d;
-		if(portrait || window.orientation == -90) d = -1; else d = 1;
+		if(portrait || cordova.Device.get_orientation() == -90) d = -1; else d = 1;
 		var p = img.offsetLeft + 3 * x * d;
 		if(p < -img.clientWidth) p = -img.clientWidth;
 		if(p > 280) p = 280;
@@ -930,11 +930,31 @@ cordova.BatteryStatusEvent.__name__ = true;
 cordova.BatteryStatusEvent.prototype = {
 	__class__: cordova.BatteryStatusEvent
 };
-cordova.navigator = {};
-cordova.navigator.CompassError = function() { };
-cordova.navigator.CompassError.__name__ = true;
-cordova.navigator.CompassError.prototype = {
-	__class__: cordova.navigator.CompassError
+cordova.Device = function() { };
+cordova.Device.__name__ = true;
+cordova.Device.get_model = function() {
+	return window.device.model;
+};
+cordova.Device.get_cordova = function() {
+	return window.device.cordova;
+};
+cordova.Device.get_platform = function() {
+	return window.device.platform;
+};
+cordova.Device.get_uuid = function() {
+	return window.device.uuid;
+};
+cordova.Device.get_version = function() {
+	return window.device.version;
+};
+cordova.Device.get_orientationMode = function() {
+	if(Math.abs(cordova.Device.get_orientation()) == 90) return "landscape"; else return "portrait";
+};
+cordova.Device.get_orientation = function() {
+	return window.orientation;
+};
+cordova.Device.get_portrait = function() {
+	return cordova.Device.get_orientationMode() == "portrait";
 };
 var haxe = {};
 haxe.Log = function() { };

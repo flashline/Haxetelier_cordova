@@ -6,7 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.navigator.Device;
+import cordova.Device;
 //
 using apix.common.util.StringExtender;
 //
@@ -21,7 +21,7 @@ class SampleDevice {
 	var callback:Dynamic;
 	public function new (?cb:Dynamic) {		
 		g = Global.get();
-		callback = cb;
+		callback = cb; 
 		//
 		var str = "";
 		str+=("Infos sur l'appareil :"+"<br/>");

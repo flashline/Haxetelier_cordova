@@ -8,6 +8,7 @@ package;
 import apix.common.tools.math.MathX;
 import apix.common.util.Global;
 import cordova.navigator.Accelerometer;
+import cordova.Device;
 import js.Browser;
 import js.html.Element;
 import js.html.InputElement;
@@ -54,41 +55,38 @@ class SampleMotion {
 	//
 	function moveMario(x:Float, y:Float, z:Float) {	
 		var v;
-		v  	  = (portrait)? x : y ;
-		left  = (portrait || upSideDown)? "#marioCtnr .left".get() :"#marioCtnr .right".get();
-		right = (portrait  || upSideDown)? "#marioCtnr .right".get() :"#marioCtnr .left".get();
+		v  	  = (Device.portrait)? x : y ;
+		left  = (Device.portrait || upSideDown)? "#marioCtnr .left".get() :"#marioCtnr .right".get();
+		right = (Device.portrait  || upSideDown)? "#marioCtnr .right".get() :"#marioCtnr .left".get();
 		if (Math.abs(v) < 4) {
 			left.style.display = "none";
 			right.style.display = "none";
 			stand.style.display = "block";
-			locateMario (v, stand,portrait);
+			locateMario (v, stand,Device.portrait);
 		}
 		else {
 			stand.style.display = "none";
 			if (v > 0) {
 				left.style.display = "block";
 				right.style.display = "none";
-				locateMario (v, left,portrait);
+				locateMario (v, left,Device.portrait);
 			}
 			else {
 				left.style.display = "none";
 				right.style.display = "block";
-				locateMario (v, right,portrait);
+				locateMario (v, right,Device.portrait);
 			}
 			
 		}
 	}
 	function locateMario (x:Float, img:Element,?portrait:Bool=true) {
 		var d = (portrait || (upSideDown) )? -1 : 1; //
-		var p = img.offsetLeft + (3*x * d); // img.getBoundingClientRect().left ; // img.style.left ; // img.scrollLeft;// + (x * -1);
+		var p = img.offsetLeft + (3*x * d); 
 		if (p<-img.clientWidth) p=-img.clientWidth ;if (p>280) p=280;		
 		var str = "" + MathX.round(p, 2) + "px";		
 		for (el in "#marioCtnr img.mario".all()) {
 			el.style.left = str;
-		}
-		//cast("#xid".get(), InputElement).value = "portrait=" + portrait;
-		//cast("#xid".get(), InputElement).value = "upSideDown=" + upSideDown;
-		
+		}		
 	}
 	function createHtmlCss() {		
 		// append html
@@ -173,7 +171,7 @@ class SampleMotion {
 		var styleEl:StyleElement = cast("style".get(head)) ;
 		if ( styleEl== null) {
 			Browser.document.head.appendChild("style".createElem());
-			styleEl = cast("style".get(head)) ;
+			styleEl = cast("style".get(head)) ; 
 		}
 		//
 		styleEl.innerHTML += css;
@@ -181,7 +179,6 @@ class SampleMotion {
 		
 		
 	}
-	var portrait(get, null):Bool; inline function get_portrait () : Bool return (! (Math.abs(ScreenView.orientation) == 90) ) ; 
-	var upSideDown(get, null):Bool; inline function get_upSideDown () : Bool return ( (ScreenView.orientation == -90) ) ; 
+	var upSideDown(get, null):Bool; inline function get_upSideDown () : Bool return ( (Device.orientation == -90) ) ; 
 	
 }
