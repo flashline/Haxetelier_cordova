@@ -1,4 +1,5 @@
-/haxeCordova/done/hxsrc/tmp/*
+/haxeCordova/done/hxsrc/tmp/save/*
+/haxeCordova/done/hxsrc/tmp/geoloc/*
 doc/jm/*
 /haxeCordova/done/cordosample/hooks/*
 /haxeCordova/done/cordosample/platforms/*
