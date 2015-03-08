@@ -8,17 +8,17 @@ extern class Geolocation {
 	static function watchPosition (success:Position -> Void, ?error:PositionError -> Void, ?options:GeolocationOptions):String;
 	static function clearWatch (watchID:String):Void;
 }
-
-typedef Position = {	
-	var coords:Coordinates;
-	var timestamp:Date;	
-}
 extern class PositionError {	
 	var code:Int;
 	var message:String;	
 	static inline var PERMISSION_DENIED:Int=1;
 	static inline var POSITION_UNAVAILABLE:Int=2;
 	static inline var TIMEOUT:Int = 3;
+}
+//
+typedef Position = {	
+	var coords:Coordinates;
+	var timestamp:Date;	
 }
 typedef Coordinates = {	
 	var latitude: Float;

@@ -14,15 +14,19 @@ extern class Capture {
 	static function captureVideo (success:Array <MediaFile> -> Void, error:CaptureError -> Void, ?options:CaptureVideoOptions):Void;
 	
 }
+@:native("CaptureError")
 extern class CaptureError  {	
-	static inline var CAPTURE_INTERNAL_ERR:Int=1; 	
-	static inline var CAPTURE_APPLICATION_BUSY:Int=2;
-	static inline var CAPTURE_INVALID_ARGUMENT:Int=3;
-	static inline var CAPTURE_NO_MEDIA_FILES:Int=4;	
-	static inline var CAPTURE_NOT_SUPPORTED:Int=20;
+	static var CAPTURE_INTERNAL_ERR:CaptureErrorConstant; 		// 0; 	
+	static var CAPTURE_APPLICATION_BUSY:CaptureErrorConstant; 	// 1;
+	static var CAPTURE_INVALID_ARGUMENT:CaptureErrorConstant; 	// 2;
+	static var CAPTURE_NO_MEDIA_FILES:CaptureErrorConstant; 	// 3;	
+	static var CAPTURE_NOT_SUPPORTED:CaptureErrorConstant; 		// 20;
 	//
-	var code:Int;	
+	var code:CaptureErrorConstant;	
 }
+extern interface CaptureErrorConstant { }
+//
+//
 extern class MediaFile {	
 	var name:String;
 	var fullPath:String;
@@ -32,14 +36,11 @@ extern class MediaFile {
 	//
 	function getFormatData(success:MediaFileData -> Void, error:Void -> Void) : Void;	
 }
-
 typedef ConfigurationData  = {	
 	var type:String;
 	var height:Int;
 	var width:Int;	
 }
-
-
 typedef MediaFileData  = {	
 	var codecs:String;
 	var bitrate:Float;

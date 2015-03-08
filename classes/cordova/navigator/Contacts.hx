@@ -1,11 +1,11 @@
 package cordova.navigator;
-
+//
+// works with org.apache.cordova.contacts
+//
 @:native("navigator.contacts")
-extern class Contacts {
-	
+extern class Contacts {	
 	static function create (properties:Contact):Contact;
 	static function find (fields:Array<Dynamic>, success:Array <Contact> -> Void, error:Dynamic -> Void, options:ContactFindOptions):Void;
-	
 }
 @:native("navigator.contacts.fieldType")
 extern class FieldType {
@@ -24,7 +24,6 @@ extern class FieldType {
 	static var categories:Array <ContactField>;
 	static var urls:Array <ContactField>;
 }
-
 @:native("ContactFindOptions")
 extern class ContactFindOptions {
 	function new ();
@@ -32,7 +31,7 @@ extern class ContactFindOptions {
 	var multiple:Bool;
 	var desiredFields:Array<String>;
 }
-
+//
 typedef ContactOrganizations = {
 	var pref:Bool;
 	var type:String;
@@ -40,7 +39,7 @@ typedef ContactOrganizations = {
 	var department:String;
 	var title:String;
 }
-
+//
 typedef Contact = {	
 	@:optional var id:String;
 	@:optional var displayName:String;

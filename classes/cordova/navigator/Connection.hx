@@ -14,8 +14,6 @@ extern class Connection {
 	static inline var CELL_2G:String= "2g";
 	static inline var CELL_3G:String= "3g";
 	static inline var CELL_4G:String= "4g";
-	static inline var NONE:String = "none";
-	
+	static inline var NONE:String = "none";	
 	static var type:String;
-	
 }

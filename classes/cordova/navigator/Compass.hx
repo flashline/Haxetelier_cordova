@@ -10,19 +10,22 @@ extern class Compass {
 	static function clearWatch (watchID:Dynamic):Void;
 	
 }
-
+//
+@:native("CompassError")
+extern class CompassError {	
+	static var COMPASS_INTERNAL_ERR:CompassErrorConstant;   // =0;
+	static var COMPASS_NOT_SUPPORTED:CompassErrorConstant;  // =20;
+	public var code:CompassErrorConstant;
+}
+extern interface CompassErrorConstant { }
+//
+//
 typedef CompassHeading = {	
 	var magneticHeading:Float;
 	var trueHeading:Float;
 	var headingAccuracy:Float;
 	var timestamp:Int;	
 }
-extern class CompassError {	
-	static inline var COMPASS_INTERNAL_ERR:Int=0;
-	static inline var COMPASS_NOT_SUPPORTED:Int=20;
-	public var code:Int;
-}
-
 typedef CompassOptions = {	
 	@:optional var frequency:Int;
 	@:optional var filter:Float;	
