@@ -38,14 +38,8 @@ class Main {
 		"#appHtmlCtnr".get().appendChild("h1".createElem()).textContent = "HX-Cordova" ;
 		"#appHtmlCtnr h1".get().style.width = "280px";
 		g=Global.get();
-		g.setupTrace("appHtmlCtnr");	
-		
+		g.setupTrace("appHtmlCtnr");			
 		//
-		var str = StringTools.ltrim(g.strVal("           ", ""));
-		trace("len="+str.length);
-		trace("vide="+(str==""));
-		
-		
 		
 		new Main();
 	}	

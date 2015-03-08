@@ -29,7 +29,6 @@ class SampleContact {
 	public function new (?cb:Dynamic) {		
 		g = Global.get();
 		callback = cb;
-		//
 		createHtmlCss();
 		//events
 		"#contactCtnr .bSearch".get().addEventListener("click", onSearchClick);

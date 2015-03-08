@@ -1,3 +1,3 @@
 ﻿Haxetelier HX-Cordova  
 
-jeanmi pour Silexlabs  
+jm for Silexlabs  
