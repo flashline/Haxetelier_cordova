@@ -46,9 +46,6 @@ Main.main = function() {
 	apix.common.util.StringExtender.get("#appHtmlCtnr h1").style.width = "280px";
 	Main.g = apix.common.util.Global.get();
 	Main.g.setupTrace("appHtmlCtnr");
-	var str = StringTools.ltrim(Main.g.strVal("           ",""));
-	haxe.Log.trace("len=" + str.length,{ fileName : "Main.hx", lineNumber : 45, className : "Main", methodName : "main"});
-	haxe.Log.trace("vide=" + Std.string(str == ""),{ fileName : "Main.hx", lineNumber : 46, className : "Main", methodName : "main"});
 	new Main();
 };
 Main.prototype = {
@@ -847,13 +844,7 @@ apix.common.util.Global.apixTrace = function(v,i) {
 	}
 };
 apix.common.util.Global.prototype = {
-	strVal: function(s,defVal) {
-		if(defVal == null) defVal = "";
-		if(s == null) return defVal;
-		if(s == "") return defVal;
-		return Std.string(s);
-	}
-	,empty: function(v) {
+	empty: function(v) {
 		if(v == null) return true;
 		if(v.length == 0) return true;
 		return false;

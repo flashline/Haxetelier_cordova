@@ -1,6 +1,6 @@
 -cp src
 -cp C:\www\Haxetelier_cordova\classes
--js ../../cordosample/www/js/main.js
+-js www/js/main.js
 -main Main
 -dce full
 
