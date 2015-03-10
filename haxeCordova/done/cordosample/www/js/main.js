@@ -39,6 +39,14 @@ var Main = function() {
 	new SampleEvent($bind(this,this.geolocation));
 	new SampleDevice();
 	new SampleSOS();
+	new FileTransfer();
+	haxe.Log.trace(cordova.file.applicationDirectory,{ fileName : "Main.hx", lineNumber : 29, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.applicationStorageDirectory,{ fileName : "Main.hx", lineNumber : 30, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.dataDirectory,{ fileName : "Main.hx", lineNumber : 31, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.cacheDirectory,{ fileName : "Main.hx", lineNumber : 32, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.externalApplicationStorageDirectory,{ fileName : "Main.hx", lineNumber : 33, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.externalCacheDirectory,{ fileName : "Main.hx", lineNumber : 34, className : "Main", methodName : "new"});
+	haxe.Log.trace(cordova.file.externalDataDirectory,{ fileName : "Main.hx", lineNumber : 35, className : "Main", methodName : "new"});
 };
 Main.__name__ = true;
 Main.main = function() {

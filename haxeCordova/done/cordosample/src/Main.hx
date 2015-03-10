@@ -7,6 +7,8 @@ package;
 */
 
 import apix.common.util.Global;
+import cordova.File;
+import cordova.FileTransfer;
 import js.Browser;
 import js.html.Element;
 //
@@ -22,6 +24,23 @@ class Main {
 		new SampleEvent (geolocation); //4
 		new SampleDevice(); //4
 		new SampleSOS(); //6/**/
+		
+		new FileTransfer();
+		trace(File.applicationDirectory);
+		trace(File.applicationStorageDirectory);
+		trace(File.dataDirectory);
+		trace(File.cacheDirectory);
+		trace(File.externalApplicationStorageDirectory);
+		trace(File.externalCacheDirectory);
+		trace(File.externalDataDirectory);
+		/*
+		trace(File);
+		trace(File);
+		trace(File);
+		trace(File);
+		trace(File);
+		trace(File);
+		trace(File);*/
 		
 	}	
 	function geolocation() { new SampleGeolocation(compass);}	//1
