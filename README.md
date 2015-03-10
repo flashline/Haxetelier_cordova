@@ -1,3 +1,5 @@
-﻿Haxetelier HX-Cordova  
+﻿Haxetelier #10 - HX-Cordova - april 27 2015  
 
-jm for Silexlabs  
+samples, doc and Haxe extern Cordova  
+
+jm for Silexlabs   
