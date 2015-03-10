@@ -6,7 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.navigator.Contacts;
+import cordovax.navigator.Contacts;
 import js.Browser;
 import js.html.Element;
 import js.html.Event;

@@ -7,7 +7,7 @@ package;
 */
 import apix.common.tools.math.GeoLoc;
 import apix.common.util.Global;
-import cordova.navigator.Geolocation;
+import cordovax.navigator.Geolocation;
 //
 //
 using apix.common.util.StringExtender;

@@ -7,8 +7,8 @@ package;
 */
 import apix.common.tools.math.MathX;
 import apix.common.util.Global;
-import cordova.navigator.Accelerometer;
-import cordova.Device;
+import cordovax.navigator.Accelerometer;
+import cordovax.Device;
 import js.Browser;
 import js.html.Element;
 import js.html.InputElement;

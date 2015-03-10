@@ -6,7 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.navigator.Camera;
+import cordovax.navigator.Camera;
 import haxe.Timer;
 import js.Browser;
 import js.html.ButtonElement;

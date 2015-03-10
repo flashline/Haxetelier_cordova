@@ -1,4 +1,4 @@
-package cordova.navigator;
+package cordovax.navigator;
 
 @:native("navigator.app") 
 extern class App {	

@@ -5,7 +5,7 @@
 //
 // works with org.apache.cordova.file-transfer
 //
-package cordova;
+package cordovax;
 //
 import js.html.fs.FileEntry;
 import js.html.ProgressEvent;

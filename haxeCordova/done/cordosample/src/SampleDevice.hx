@@ -6,7 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.Device;
+import cordovax.Device;
 //
 using apix.common.util.StringExtender;
 //

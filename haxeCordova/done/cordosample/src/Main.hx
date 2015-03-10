@@ -7,8 +7,8 @@ package;
 */
 
 import apix.common.util.Global;
-import cordova.File;
-import cordova.FileTransfer;
+import cordovax.File;
+import cordovax.FileTransfer;
 import js.Browser;
 import js.html.Element;
 //

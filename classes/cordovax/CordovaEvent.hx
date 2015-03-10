@@ -1,4 +1,4 @@
-package cordova; // v 1.2.0
+package cordovax; // v 1.3.0
 import js.html.Event;
 //
 // works with org.apache.cordova.network-information for online/offline

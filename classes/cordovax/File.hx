@@ -4,7 +4,7 @@
 //
 // works with org.apache.cordova.file
 //
-package cordova;
+package cordovax;
 //
 @:native("cordova.file") 
 extern class File {		

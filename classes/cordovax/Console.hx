@@ -1,4 +1,4 @@
-package cordova;
+package cordovax;
 //
 // works with org.apache.cordova.console -but not necessary for android
 //

@@ -6,7 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.navigator.Compass;
+import cordovax.navigator.Compass;
 import js.Browser;
 import js.html.ImageElement;
 //

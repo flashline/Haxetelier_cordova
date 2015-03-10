@@ -6,8 +6,8 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.navigator.App;
-import cordova.navigator.Notification;
+import cordovax.navigator.App;
+import cordovax.navigator.Notification;
 import haxe.Timer;
 import js.Browser;
 import js.html.Event;

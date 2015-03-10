@@ -1,4 +1,4 @@
-package cordova.navigator;
+package cordovax.navigator;
 //
 // works with org.apache.cordova.camera
 //

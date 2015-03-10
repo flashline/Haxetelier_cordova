@@ -6,11 +6,11 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordova.Console;
-import cordova.CordovaEvent;
+import cordovax.Console;
+import cordovax.CordovaEvent;
 //
-import cordova.navigator.Notification;
-import cordova.navigator.App;
+import cordovax.navigator.Notification;
+import cordovax.navigator.App;
 import js.Browser;
 //
 using apix.common.util.StringExtender;
