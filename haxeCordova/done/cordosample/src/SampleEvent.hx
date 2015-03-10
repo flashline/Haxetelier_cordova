@@ -6,6 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
+import cordova.Console;
 import cordova.CordovaEvent;
 //
 import cordova.navigator.Notification;
@@ -42,10 +43,11 @@ class SampleEvent {
 		Browser.document.addEventListener(CordovaEvent.BACK_BUTTON, onBackButton) ; 
 		// Not ok on my phone. To test on my tablet
 		// Browser.document.addEventListener(CordovaEvent.START_CALL_BUTTON, onStartCall) ; 
-		// Browser.document.addEventListener(CordovaEvent.END_CALL_BUTTON, onEndCall) ; 		
-		// test it on my tablet : Browser.document.addEventListener(CordovaEvent.VOLUME_DOWN_BUTTON, onVolumeDown) ; 
+		// Browser.document.addEventListener(CordovaEvent.END_CALL_BUTTON, onEndCall) ; 
+		// Browser.document.addEventListener(CordovaEvent.VOLUME_DOWN_BUTTON, onVolumeDown) ; 
 		// Browser.document.addEventListener(CordovaEvent.VOLUME_UP_BUTTON, onVolumeUp) ;
-		// Browser.document.addEventListener(CordovaEvent.PAUSE, onPause) ; 
+		//
+		Console.log("Test de console.log() avec jsConsole.com");
 		//
 		if (callback != null) callback(); 
 		//

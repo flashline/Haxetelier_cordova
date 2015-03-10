@@ -498,6 +498,7 @@ var SampleEvent = function(cb) {
 	window.document.addEventListener("searchbutton",$bind(this,this.onSearchButton));
 	window.document.addEventListener("offline",$bind(this,this.onOffLine));
 	window.document.addEventListener("backbutton",$bind(this,this.onBackButton));
+	console.log("Test de console.log() avec jsConsole.com");
 	if(this.callback != null) this.callback();
 };
 SampleEvent.__name__ = true;
