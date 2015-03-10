@@ -7,6 +7,7 @@ package;
 */
 import apix.common.util.Global;
 import cordova.navigator.App;
+import cordova.navigator.Notification;
 import haxe.Timer;
 import js.Browser;
 import js.html.Event;
@@ -53,7 +54,7 @@ class SampleSOS {
 		for (t in stk) t.run=null;
 	}
 	function onClock() {	
-		Navigator.vibrate([150,100,150,100,150,200, 1000,200,1000,200,1000,200,   150,100,150,100,150,100]); // ...---... // S-O-S
+		Pop.vibrate([150,100,150,100,150,200, 1000,200,1000,200,1000,200,   150,100,150,100,150,100]); // ...---... // S-O-S
 	}
 	
 		

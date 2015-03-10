@@ -8,7 +8,7 @@ package;
 import apix.common.util.Global;
 import cordova.CordovaEvent;
 //
-import cordova.navigator.Pop;
+import cordova.navigator.Notification;
 import cordova.navigator.App;
 import js.Browser;
 //

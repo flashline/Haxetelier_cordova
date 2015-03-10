@@ -709,7 +709,7 @@ SampleSOS.prototype = {
 		}
 	}
 	,onClock: function() {
-		navigator.vibrate([150,100,150,100,150,200,1000,200,1000,200,1000,200,150,100,150,100,150,100]);
+		navigator.notification.vibrate([150,100,150,100,150,200,1000,200,1000,200,1000,200,150,100,150,100,150,100]);
 	}
 	,createHtmlCss: function() {
 		var str = "";
