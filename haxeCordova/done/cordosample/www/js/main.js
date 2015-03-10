@@ -39,14 +39,11 @@ var Main = function() {
 	new SampleEvent($bind(this,this.geolocation));
 	new SampleDevice();
 	new SampleSOS();
-	new FileTransfer();
-	haxe.Log.trace(cordova.file.applicationDirectory,{ fileName : "Main.hx", lineNumber : 29, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.applicationStorageDirectory,{ fileName : "Main.hx", lineNumber : 30, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.dataDirectory,{ fileName : "Main.hx", lineNumber : 31, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.cacheDirectory,{ fileName : "Main.hx", lineNumber : 32, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.externalApplicationStorageDirectory,{ fileName : "Main.hx", lineNumber : 33, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.externalCacheDirectory,{ fileName : "Main.hx", lineNumber : 34, className : "Main", methodName : "new"});
-	haxe.Log.trace(cordova.file.externalDataDirectory,{ fileName : "Main.hx", lineNumber : 35, className : "Main", methodName : "new"});
+	navigator.globalization.getPreferredLanguage(function(gr) {
+		haxe.Log.trace(gr.value,{ fileName : "Main.hx", lineNumber : 26, className : "Main", methodName : "new"});
+	},function(e) {
+		haxe.Log.trace(e.message,{ fileName : "Main.hx", lineNumber : 26, className : "Main", methodName : "new"});
+	});
 };
 Main.__name__ = true;
 Main.main = function() {
@@ -507,6 +504,10 @@ var SampleEvent = function(cb) {
 	window.document.addEventListener("offline",$bind(this,this.onOffLine));
 	window.document.addEventListener("backbutton",$bind(this,this.onBackButton));
 	console.log("Test de console.log() avec jsConsole.com");
+	console.log("File.applicationDirectory=" + cordova.file.applicationDirectory);
+	console.log("File.applicationStorageDirectory=" + cordova.file.applicationStorageDirectory);
+	console.log("File.dataDirectory=" + cordova.file.dataDirectory);
+	console.log("File.cacheDirectory=" + cordova.file.cacheDirectory);
 	if(this.callback != null) this.callback();
 };
 SampleEvent.__name__ = true;
