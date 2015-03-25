@@ -48,11 +48,13 @@ class SampleEvent {
 		// Browser.document.addEventListener(CordovaEvent.VOLUME_DOWN_BUTTON, onVolumeDown) ; 
 		// Browser.document.addEventListener(CordovaEvent.VOLUME_UP_BUTTON, onVolumeUp) ;
 		//
-		Console.log("Test de console.log() avec jsConsole.com");
-		Console.log("File.applicationDirectory="+File.applicationDirectory);
-		Console.log("File.applicationStorageDirectory="+File.applicationStorageDirectory);
-		Console.log("File.dataDirectory="+File.dataDirectory);
-		Console.log("File.cacheDirectory="+File.cacheDirectory);
+		if (g.isMobile) {
+			Console.log("Test de console.log() avec jsConsole.com");
+			Console.log("File.applicationDirectory="+File.applicationDirectory);
+			Console.log("File.applicationStorageDirectory="+File.applicationStorageDirectory);
+			Console.log("File.dataDirectory="+File.dataDirectory);
+			Console.log("File.cacheDirectory=" + File.cacheDirectory);
+		}
 		//
 		if (callback != null) callback(); 
 		//

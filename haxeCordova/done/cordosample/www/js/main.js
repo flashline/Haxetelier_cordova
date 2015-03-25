@@ -39,11 +39,6 @@ var Main = function() {
 	new SampleEvent($bind(this,this.geolocation));
 	new SampleDevice();
 	new SampleSOS();
-	navigator.globalization.getPreferredLanguage(function(gr) {
-		haxe.Log.trace(gr.value,{ fileName : "Main.hx", lineNumber : 26, className : "Main", methodName : "new"});
-	},function(e) {
-		haxe.Log.trace(e.message,{ fileName : "Main.hx", lineNumber : 26, className : "Main", methodName : "new"});
-	});
 };
 Main.__name__ = true;
 Main.main = function() {
@@ -503,11 +498,13 @@ var SampleEvent = function(cb) {
 	window.document.addEventListener("searchbutton",$bind(this,this.onSearchButton));
 	window.document.addEventListener("offline",$bind(this,this.onOffLine));
 	window.document.addEventListener("backbutton",$bind(this,this.onBackButton));
-	console.log("Test de console.log() avec jsConsole.com");
-	console.log("File.applicationDirectory=" + cordova.file.applicationDirectory);
-	console.log("File.applicationStorageDirectory=" + cordova.file.applicationStorageDirectory);
-	console.log("File.dataDirectory=" + cordova.file.dataDirectory);
-	console.log("File.cacheDirectory=" + cordova.file.cacheDirectory);
+	if(this.g.get_isMobile()) {
+		console.log("Test de console.log() avec jsConsole.com");
+		console.log("File.applicationDirectory=" + cordova.file.applicationDirectory);
+		console.log("File.applicationStorageDirectory=" + cordova.file.applicationStorageDirectory);
+		console.log("File.dataDirectory=" + cordova.file.dataDirectory);
+		console.log("File.cacheDirectory=" + cordova.file.cacheDirectory);
+	}
 	if(this.callback != null) this.callback();
 };
 SampleEvent.__name__ = true;
