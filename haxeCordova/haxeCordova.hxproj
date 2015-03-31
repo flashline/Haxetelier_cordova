@@ -15,9 +15,9 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="C:\www\Haxetelier_cordova\classes\" />
-    <class path="C:\Program Files\haxe\haxe31\std\" />
-    <class path="C:\www\__HAXE\classes\Apix\" />
+    <class path="..\classes" />
+    <class path="..\..\__HAXE\classes\Apix" />
+    <class path="C:\Program Files (x86)\Haxe\haxe313" />
   </classpaths>
   <!-- Build options -->
   <build>
