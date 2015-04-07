@@ -44,7 +44,8 @@
         
     },
     // haxe app starting
-    haxeAppStart: function() {	
+    haxeAppStart: function() {		
+		console.log("v 2");
 		var s = document.createElement('script');
 		s.src = "js/main.js"; 
 		document.getElementsByTagName("head")[0].appendChild(s);		

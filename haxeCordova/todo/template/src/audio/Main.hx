@@ -1,7 +1,7 @@
 /**
 * app root package
 */
-package;
+package ;
 /**
 * classes imports
 */
@@ -18,20 +18,15 @@ using apix.common.util.StringExtender;
 class Main {
 	static var g:Global; 	
 	
-	function new () {			
-		new SampleEvent (geolocation); //4
-		new SampleDevice(); //4
-		new SampleSOS(); //6
-	}	
-	function geolocation() { new SampleGeolocation(compass);}	//1
-	function compass() {new SampleCompass (camera);}			//1
-	function camera() { new SampleCamera (database); }			//2
-	function database() { new SampleDatabase (motion); }		//3
-	function motion() { new SampleMotion (contact); }			//5
-	function contact() { new SampleContact (end); }				//7
+	function new () {		
+		new SampleEvent (audioLocal); 
+		//new SampleEvent (audioServer); 
+	}
+	function audioLocal () 	{ new SampleAudioLocal	 (end); }	
+	function audioServer () { new SampleAudioServer	 (end); }	
 	
 	function end () {	
-		"c fini".trace();
+		//"c fini".trace();
 	}
 	static function main() {  
 		"#appHtmlCtnr".get().appendChild("h1".createElem()).textContent = "HX-Cordova" ;

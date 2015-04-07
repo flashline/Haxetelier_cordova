@@ -16,15 +16,15 @@ extern class Capture {
 }
 @:native("CaptureError")
 extern class CaptureError  {	
-	static var CAPTURE_INTERNAL_ERR:CaptureErrorConstant; 		// 0; 	
-	static var CAPTURE_APPLICATION_BUSY:CaptureErrorConstant; 	// 1;
-	static var CAPTURE_INVALID_ARGUMENT:CaptureErrorConstant; 	// 2;
-	static var CAPTURE_NO_MEDIA_FILES:CaptureErrorConstant; 	// 3;	
-	static var CAPTURE_NOT_SUPPORTED:CaptureErrorConstant; 		// 20;
+	static var CAPTURE_INTERNAL_ERR:Int; 		// 0; 	
+	static var CAPTURE_APPLICATION_BUSY:Int; 	// 1;
+	static var CAPTURE_INVALID_ARGUMENT:Int; 	// 2;
+	static var CAPTURE_NO_MEDIA_FILES:Int; 		// 3;	
+	static var CAPTURE_NOT_SUPPORTED:Int; 		// 20;
 	//
-	var code:CaptureErrorConstant;	
+	var code:Int;
+	
 }
-extern interface CaptureErrorConstant { }
 //
 //
 extern class MediaFile {	
