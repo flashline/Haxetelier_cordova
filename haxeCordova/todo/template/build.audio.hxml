@@ -1,5 +1,5 @@
 -cp src/audio
--cp D:\www\Haxetelier_cordova\classes 
+-cp D:/www/Haxetelier_cordova/classes 
 -js www/js/main.js
 -main Main
 -dce full

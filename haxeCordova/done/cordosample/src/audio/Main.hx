@@ -19,8 +19,8 @@ class Main {
 	static var g:Global; 	
 	
 	function new () {		
-		new SampleEvent (audioLocal); 
-		//new SampleEvent (audioServer); 
+		//new SampleEvent (audioLocal); 
+		new SampleEvent (audioServer); 
 	}
 	function audioLocal () 	{ new SampleAudioLocal	 (end); }	
 	function audioServer () { new SampleAudioServer	 (end); }	

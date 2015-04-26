@@ -1,5 +1,5 @@
 -cp src
--cp C:\www\Haxetelier Cordova\classes
+-cp D:/www/Haxetelier Cordova/classes
 -js www/js/main.js
 -main Main
 -dce full

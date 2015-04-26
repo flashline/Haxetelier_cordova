@@ -1,6 +1,6 @@
 package cordovax.navigator;
 //
-// works with org.apache.cordova.dialogs
+// works with org.apache.cordova.dialogs and org.apache.cordova.vibration
 //
 typedef Pop = Notification ;
 @:native("navigator.notification")
@@ -10,6 +10,7 @@ extern class Notification {
 	static function prompt (msg:String,cb:PromptResult->Void,?title:String,?buttonLabelArray:Array<String>,?defInput:String):Void;
 	static function beep (?times:Int):Void;	
 	//
+	// navigator.notification.vibrate is deprecaded in js. Use Navigator.vibrate();
 	@:overload(function(durArray:Array<Int>):Void {})
 	static function vibrate (dur:Int):Void;	
 }

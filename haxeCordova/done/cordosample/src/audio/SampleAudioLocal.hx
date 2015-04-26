@@ -29,7 +29,8 @@ class SampleAudioLocal	 {
 	var media:Media;
 	var name:String;
 	var path:String;
-	static inline var RECORDING_FOLDER = "My%20Documents/My%20Recordings/" ;
+	static inline var RECORDING_FOLDER = "My%20Documents/My%20Recordings/" ; //htc desire hd
+	//static inline var RECORDING_FOLDER = "Sounds/" ; // samsung gt I8190
 	public function new (?cb:Dynamic) {		
 		g=Global.get();
 		//

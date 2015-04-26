@@ -31,17 +31,17 @@ class SampleContact {
 		//
 		createHtmlCss();
 		//events
-		//"#contactCtnr .bSearch".get().addEventListener("click", onSearchClick);
 		"#contactCtnr .search".get().addEventListener("input", findContact);
+		
 		//
 		if (callback != null) callback(); 
 	}
 	function findContact (e:MouseEvent) {	
 		"#contactCtnr .search".get().removeEventListener("input", findContact);
 		"#contactCtnr .contactDisplay".get().innerHTML = "";
-		//
 		var v = cast( "#contactCtnr .search".get() , InputElement ).value ;
-		//here
+		//that begins here
+		
 	}	
 	function onContactSuccess(contacts:Array < Contact > ) {
 		var str = "";

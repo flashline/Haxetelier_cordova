@@ -6,8 +6,7 @@ package;
 * classes imports
 */
 import apix.common.util.Global;
-import cordovax.navigator.App;
-import cordovax.navigator.Notification;
+import cordovax.navigator.Notification; // Navigator class is in Notification.hx 
 import haxe.Timer;
 import js.Browser;
 import js.html.Event;
@@ -53,8 +52,9 @@ class SampleSOS {
 		timer.stop();
 		for (t in stk) t.run=null;
 	}
-	function onClock() {	
-		Pop.vibrate([150,100,150,100,150,200, 1000,200,1000,200,1000,200,   150,100,150,100,150,100]); // ...---... // S-O-S
+	function onClock() {
+		// Navigator class is defined in Notification.hx 
+		Navigator.vibrate([150,100,150,100,150,200, 1000,200,1000,200,1000,200,   150,100,150,100,150,100]); // ...---... // S-O-S
 	}
 	
 		

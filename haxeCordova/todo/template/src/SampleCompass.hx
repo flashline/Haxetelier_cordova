@@ -29,8 +29,7 @@ class SampleCompass {
 		
 		
 		
-				if (g.isMobile) 		;
-		else 	if (callback != null) 	callback(); 
+		
 	}	
 	
 	

@@ -39,7 +39,7 @@ class SampleSOS {
 	function onStart(e:Event) {	
 		"#vibrateCtnr .start".get().style.display = "none";
 		"#vibrateCtnr .stop".get().style.display = "block";
-		timer=new Timer(Math.round(6 * SECOND));
+		timer=new Timer(Math.round(6 * SECOND)); // setInterval js
 		timer.run = onClock;
 		onClock();
 		stk.push(timer);

@@ -28,7 +28,6 @@ class SampleCamera {
  	var callback:Dynamic;
 	public function new (?cb:Dynamic) {		
 		g=Global.get();
-		//
 		callback = cb;
 		
 		
@@ -42,7 +41,7 @@ class SampleCamera {
 	
 	function createButton () {		
 		bt = cast("button".createElem());
-		"#appHtmlCtnr".get().appendChild(bt);
+		"#appHtmlCtnr".get().appendChild(bt); // ~ Browser.document.querySelector("#appHtmlCtnr").appendChild(bt);	~ $("#appHtmlCtnr") etc
 		bt.style.fontSize = "2em";
 		bt.style.marginTop = "2em";
 		bt.style.display = "block";
