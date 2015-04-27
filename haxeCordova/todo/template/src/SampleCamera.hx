@@ -29,7 +29,8 @@ class SampleCamera {
 	public function new (?cb:Dynamic) {		
 		g=Global.get();
 		callback = cb;
-		
+		createButton();
+		createEmptyImg ();	
 		
 		//
 		if (callback != null) 	callback();
