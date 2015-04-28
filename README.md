@@ -1,5 +1,5 @@
-﻿Haxetelier #10 - HX-Cordova - april 27 2015  
+﻿Haxetelier #10 - HX-Cordova - april 27 2015  (fr)
 
-samples, doc and Haxe extern Cordova  
+samples, [doc](doc/) and [Haxe extern Cordova](classes/)
 
-jm for Silexlabs   
+[Apix](http://www.pixaline.net/) for [Silexlabs.org](http://www.silexlabs.org/)
